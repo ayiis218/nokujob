@@ -1,0 +1,168 @@
+.bg {
+	background-color: #5e50a1;
+	height: 290px;
+	color: white;
+}
+.profilpict {
+	border-radius: 50%;
+}
+
+.navbar-profil {
+	border-radius: 50%;
+}
+
+.footerlink {
+	color: white;
+}
+
+
+
+.button-profil {
+	background: #5e50a1;
+	border: 2px solid #5e50a1;
+}
+.background {
+	background-color: #5e50a1;
+}
+
+.App {
+	background-color: #f6f7f8;
+}
+
+.d-inline {
+	display: inline-block;
+}
+
+.imagelayer1 {
+	background-color: #e2e5ed;
+	transform: rotate(-15.79deg);
+	width: 500px;
+	height: 500px;
+}
+
+.imagelayer1-2 {
+	background-color: #e2e5ed;
+	transform: rotate(15.79deg);
+	width: 490px;
+	height: 390px;
+}
+
+.imagelayer1-3 {
+	background-color: #e2e5ed;
+	transform: rotate(-15.79deg);
+	width: 490px;
+	height: 390px;
+}
+
+.pict-unit1 {
+	position: absolute;
+	transform: rotate(15.79deg);
+}
+
+.pict-unit2 {
+	position: absolute;
+	transform: rotate(-15.79deg);
+}
+
+.pict-unit3 {
+	position: absolute;
+	transform: rotate(15.79deg);
+}
+
+.imagelayer2 {
+	background-color: #5e50a1;
+	transform: rotate(15.79deg);
+	width: 118px;
+	height: 118px;
+	position: absolute;
+	top: 350px;
+	left: -100px;
+}
+
+.imagelayer2-2 {
+	background-color: #5e50a1;
+	transform: rotate(-15.79deg);
+	width: 118px;
+	height: 118px;
+	position: absolute;
+	margin-left: -80px;
+}
+
+.imagelayer3 {
+	background-color: #fbb017;
+	transform: rotate(15.79deg);
+	width: 46px;
+	height: 46px;
+	position: absolute;
+	top: 450px;
+	margin-left: -15px;
+}
+
+.imagelayer2-3 {
+	background-color: #fbb017;
+	transform: rotate(15.79deg);
+	width: 90px;
+	height: 96px;
+	position: absolute;
+	top: 10px;
+	left: 480px;
+}
+
+.layer {
+	position: absolute;
+	transform: rotate(15.79deg);
+	top: 300px;
+	left: -10px;
+}
+
+.layer-2 {
+	position: absolute;
+	transform: rotate(-15.79deg);
+	top: 400px;
+	left: 10px;
+}
+
+.item {
+	margin-top: 100px;
+	margin-bottom: 350px;
+}
+
+.check {
+	color: #fbb017;
+}
+
+.checklist {
+	color: #5e50a1;
+}
+
+.flex-center-vertical {
+	align-items: center;
+}
+
+.unit5 {
+	background-color: #5e50a1;
+	height: 227px;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 40px;
+	border-bottom-left-radius: 8px;
+}
+
+.position-absolute {
+	margin-top: 95px;
+}
+
+.layer2 {
+	position: relative;
+	width: 100%;
+	opacity: 0.9px;
+	z-index: 0;
+}
+
+.item-last {
+	margin-bottom: 200px;
+}
+
+.roundedCircle {
+	border-radius: 50%;
+}

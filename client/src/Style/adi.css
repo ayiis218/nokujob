@@ -1,0 +1,262 @@
+.gradientBGPage {
+	/* gradient part purple in profile page */
+	background: linear-gradient(to bottom, #5e50a1 16rem, #e5e5e5 16rem);
+}
+.gradientBGPageCompProfile {
+	/* gradient part purple in profile page */
+	background: linear-gradient(to bottom, #5e50a1 12rem, white 12rem);
+	border-radius: 10px;
+}
+.solidBGPage {
+	background-color: #e5e5e5;
+}
+.bgtes {
+	background-color: red;
+}
+
+/* Profile Side Bar styling START */
+.whiteBg {
+	background-color: white;
+	border-radius: 10px;
+}
+.whiteBg .avatar {
+	width: 100%;
+}
+.circleImage {
+	border-radius: 50%;
+	width: 100%;
+}
+.loc {
+	/* 'location logo' on side bar Profile*/
+	width: 13%;
+	height: fit-content;
+}
+.whiteBg .icon {
+	/* 'social media logo' on side bar Profile*/
+	width: 70%;
+	height: fit-content;
+}
+.h1SideBarProfile {
+	text-align: left;
+	font-size: 20px;
+	font-weight: bold;
+}
+.h2SideBarProfile {
+	text-align: left;
+	font-size: 14px;
+	font-weight: bold;
+}
+.pSideBarProfile {
+	text-align: left;
+	font-size: 12px;
+	color: #9ea0a5;
+}
+.pSideBarProfile a {
+	text-decoration: none;
+	color: #9ea0a5;
+}
+.theTag {
+	color: white;
+	background-color: rgba(251, 176, 23, 0.6);
+	border: 1px solid rgb(251, 176, 23);
+	font-size: 12px;
+	border-radius: 7px;
+	padding: 6px 16px;
+	margin: 0px 8px 10px 0px;
+}
+.titleEditProfile {
+	text-align: left;
+	font-size: 20px;
+	font-weight: bold;
+}
+/* Profile Side Bar styling END */
+
+/* Button styling START */
+.Button {
+	width: 100%;
+	border-radius: 5px;
+	padding: 10px;
+}
+.doit {
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #5e50a1;
+	border: 1px solid #5e50a1;
+	/* border: 1px solid  white; */
+}
+.doit:hover {
+	font-size: 18px;
+	background-color: rgba(137, 207, 33, 0.8);
+	border: 1px solid black;
+}
+.cancel {
+	font-size: 14px;
+	font-weight: bold;
+	background-color: white;
+	border: 1px solid #5e50a1;
+	color: #5e50a1;
+}
+.cancel:hover {
+	font-size: 18px;
+	background-color: rgba(219, 95, 23, 0.8);
+	border: 1px solid black;
+	color: white;
+}
+.skillbutton {
+	/* font-size: 14px; */
+	font-weight: bold;
+	background-color: white;
+	border: 1px solid #5e50a1;
+	color: #5e50a1;
+}
+.skillbutton:hover {
+	background-color: #5d50a1a0;
+	border: 1px solid #5d50a1a0;
+	color: white;
+}
+/* Button styling END */
+
+/* Tabs Profile styling START */
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+}
+.tabs__label {
+	padding: 8px 0px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	cursor: pointer;
+	font-weight: bold;
+	color: #9ea0a5;
+}
+.tabs__radio {
+	display: none;
+}
+.tabs__content {
+	order: 1;
+	display: none;
+}
+.tabs__radio:checked + .tabs__label {
+	color: #5e50a1;
+	border-bottom: 4px solid #5e50a1;
+}
+.tabs__label:hover {
+	color: #5d50a1a4;
+	border-bottom: 3px solid #5d50a174;
+}
+.tabs__radio:checked + .tabs__label + .tabs__content {
+	display: initial;
+}
+/* Tabs Profile styling END */
+
+/* Tab Porto styling START */
+.portoPage img {
+	width: 100%;
+	border-radius: 5px;
+}
+.portoPage .theTitle {
+	font-size: 14px;
+	font-weight: bold;
+}
+.portoPage .portoTitle {
+	color: #9ea0a5;
+	text-align: center;
+}
+/* Tab Porto styling END */
+
+/* Tab jobExp styling START */
+.jobsExpPage img {
+	width: 80%;
+	/* align-items: center; */
+	border-radius: 5px;
+}
+.jobsExpPage .theTitle {
+	text-align: left;
+	font-weight: bold;
+	font-size: 17px;
+}
+.jobsExpPage .theComp {
+	text-align: left;
+	font-size: 17px;
+}
+.jobsExpPage .theDate {
+	text-align: left;
+	color: #9ea0a5;
+	font-size: 14px;
+}
+.jobsExpPage .theDesc {
+	text-align: left;
+	font-size: 14px;
+}
+/* Tab jobExp styling END */
+
+/* Just to check background CompHireJSeek.jsx */
+.checkBGCompJSeekProfile {
+	background-color: white;
+	border-radius: 10px;
+}
+.titleContactJseek {
+	text-align: left;
+	font-size: 28px;
+	font-weight: bold;
+}
+.deskCompJSeekProfile {
+	text-align: left;
+	font-size: 14px;
+	color: rgb(110, 110, 110);
+	font-weight: bold;
+}
+
+.compProfile {
+	align-content: center;
+	text-align: center;
+}
+.compProfile .circleImage {
+	margin-top: 5.3rem;
+}
+.logoEdit {
+	text-align: center;
+	text-decoration: none;
+	color: #9ea0a5;
+}
+.logoEdit:hover {
+	color: #9ea0a5;
+	background-color: #5e50a1;
+	border-radius: 5px;
+}
+.compProfEditBG {
+	margin-top: 10rem;
+	color: white;
+	font-size: 14px;
+	text-align: right;
+	text-decoration: none;
+}
+.compProfEditBG:hover {
+	color: white;
+}
+.compProfile .titleComp {
+	font-size: 20px;
+	font-weight: bold;
+}
+.compProfile .industry {
+	font-size: 14px;
+	/* font-weight: bold; */
+}
+.compProfile .p {
+	font-size: 14px;
+	color: #9ea0a5;
+}
+.compProfile .loc {
+	width: 100%;
+}
+.compProfile .t100 {
+	width: 100%;
+}
+.inlineIconText {
+	display: block;
+}
+/* .pSideBarProfile a{
+  text-decoration: none;
+  color: #9EA0A5;
+} */

@@ -1,0 +1,64 @@
+.section {
+	overflow: hidden;
+	height: 100vh;
+}
+
+.left {
+	margin-top: 160px !important;
+}
+
+.register {
+	margin-top: 20px;
+}
+.content {
+	padding: 25px;
+	}
+	
+	.img img {
+		object-fit: cover;
+		width: 693px !important;
+}
+
+.images {
+	height: 100 !important;
+	width: 100% !important;
+}
+
+.banner {
+	position: absolute;
+	top: 330px;
+	left: 51%;
+	transform: translate(-50%, -50%);
+	width: 80%;
+}
+
+.banner h1 {
+	font-size: 35px;
+	font-weight: 700;
+	line-height: 70px;
+	color: var(--text-white);
+}
+
+.left_wave {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.right_wave {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+@media (min-width: 768px) {
+	.section {
+		height: 125vh;
+		overflow: hidden;
+	}
+
+	.img img {
+		width: 686px !important;
+	}
+}
