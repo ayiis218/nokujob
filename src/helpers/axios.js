@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const interceptor = axios.create({
-	baseURL: `https://ricette-dellapp.herokuapp.com/`,
+	baseURL: `${process.env.REACT_APP_API_URL}`,
 });
 
 interceptor.interceptors.request.use(

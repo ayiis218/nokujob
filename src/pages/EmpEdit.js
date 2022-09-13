@@ -1,15 +1,55 @@
-import React from "react";
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-use-before-define */
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Image, Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import Loading from "react-content-loader";
+import axios from "../helpers/axios";
 
 import edit from "../assets/icons/editGray.png";
 import loc from "../assets/icons/locLogo.png";
-import profil from "../assets/img/profil.jpg";
 
-import Navbar1 from "../components/organisms/Navbar1Adi";
-import Footer from "../components/organisms/FooterAdi";
+import Navbar1 from "../components/organisms/Navbar1";
+import Footer from "../components/organisms/Footer";
 
 export default function EmpEdit() {
+	const Navigate = useNavigate();
+	const token = Cookies.get("token");
+	// const id = Cookies.get("users");
+	const [data, setData] = useState([]);
+	const [loading, setLoading] = useState(false);
+	console.log(data);
+
+	useEffect(() => {
+		if (!token) {
+			alert.fire({
+				title: "Failed",
+				text: "Please login",
+				icon: "Error",
+			});
+			Navigate("/auth/login");
+		}
+	}, [token]);
+
+	useEffect(() => {
+		getUser();
+	}, []);
+
+	const getUser = () => {
+		setLoading(true);
+		axios
+			.get(`profile`)
+			.then((res) => {
+				setData(res?.data?.user_profile);
+				setLoading(false);
+			})
+			.catch((err) => {
+				err?.response;
+				console.log(err?.response?.data?.message);
+				setLoading(false);
+			});
+	};
 	return (
 		<>
 			<Navbar1 />
@@ -17,49 +57,53 @@ export default function EmpEdit() {
 				<Container>
 					<Row className="py-5">
 						<Col sm={1} />
-
-						{/* LEFT SIDE BAR */}
-						<Col sm={3}>
-							{/* PROFILE */}
-							<Row>
-								<div className="whiteBg py-4 px-4">
+						{loading ? (
+							<Loading />
+						) : (
+							<>
+								{/* LEFT SIDE BAR */}
+								<Col sm={3}>
 									<Row>
-										<Col />
-										<Col xs={6}>
-											<Image className="circleImage pb-3" src={profil} />
-											<Row className="pb-4">
-												<Link to="/#editAvatarCompanyURL" className="logoEdit inlineIconText">
-													<Image src={edit} />
-													<span>Edit</span>
-												</Link>
+										<div className="whiteBg py-4 px-4">
+											<Row>
+												<Col />
+												<Col xs={6}>
+													<Image className="circleImage pb-3" src={data.photo} />
+													<Row className="pb-4">
+														<Link to="/#editAvatarCompanyURL" className="logoEdit inlineIconText">
+															<Image src={edit} />
+															<span>Edit</span>
+														</Link>
+													</Row>
+												</Col>
+												<Col />
 											</Row>
-										</Col>
-										<Col />
+											<div className="h1SideBarProfile pb-1">{data.name}</div>
+											<div className="h2SideBarProfile pb-2 text-secondary">{data.position}</div>
+
+											<Row className="pSideBarProfile pb-2">
+												<Image className="loc" src={loc} />
+												{data.domicile}
+											</Row>
+
+											<div className="pSideBarProfile">{data.shortDesc}</div>
+										</div>
 									</Row>
-									<div className="h1SideBarProfile pb-1">Louis Tomlinson</div>
-									<div className="h2SideBarProfile pb-2">Web Developer</div>
 
-									<Row className="pSideBarProfile pb-2">
-										<Image className="loc" src={loc} />
-										Purwokerto, Jawa Tengah
-									</Row>
-
-									<div className="pSideBarProfile">Freelancer</div>
-								</div>
-							</Row>
-
-							{/* BUTTON FOR SAVE & CANCEL OF EDITING */}
-							<div className="profilSaveCancel">
-								<Row>
-									<Link to="/employed">
-										<Button className="Button doit mt-3 mb-2">Save</Button>
-									</Link>
-									<Link to="/employed">
-										<Button className="Button cancel mb-2">Cancel</Button>
-									</Link>
-								</Row>
-							</div>
-						</Col>
+									{/* BUTTON FOR SAVE & CANCEL OF EDITING */}
+									<div className="profilSaveCancel">
+										<Row>
+											<Link to="/employed">
+												<Button className="Button doit mt-3 mb-2">Save</Button>
+											</Link>
+											<Link to="/employed">
+												<Button className="Button cancel mb-2">Cancel</Button>
+											</Link>
+										</Row>
+									</div>
+								</Col>
+							</>
+						)}
 
 						{/* RIGHT SIDE BAR */}
 						<Col sm={7}>

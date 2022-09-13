@@ -16,7 +16,7 @@ import Recruiter from "./pages/Auth/Recruiter";
 import Seeker from "./pages/Auth/JobSeeker";
 import Chat from "./pages/Chat";
 
-import "./Style/adi.css"; // CSS
+import "./Style/global.css"; // CSS
 import "./Style/HomeStyles.css"; // CSS
 import EmployeeProfile from "./pages/EmpProfile";
 import EmployeeEdit from "./pages/EmpEdit";

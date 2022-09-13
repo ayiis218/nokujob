@@ -100,6 +100,4 @@ function FormChat() {
 	);
 }
 
-FormChat.layout = "mainLayout";
-
 export default FormChat;

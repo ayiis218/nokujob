@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../components/organisms/Navbar1";
 import FormChat from "../components/organisms/FormChat";
-import Footer from "../components/organisms/FooterAdi";
+import Footer from "../components/organisms/Footer";
 
 const chat = () => {
 	return (
