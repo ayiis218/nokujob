@@ -24,9 +24,9 @@ function Navbar1() {
 							</Popover>
 						}
 					>
-						<Bell />
+						<Bell className="me-3"/>
 					</OverlayTrigger>
-					<Envelope className="mx-2 justify-content-center" />
+					<Envelope className="me-3 justify-content-center" />
 					<Link to="/employed">
 						<img
 							className="navbar-profil justify-content-center ms-2 mt-0"
