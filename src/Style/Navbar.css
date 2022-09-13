@@ -1,0 +1,16 @@
+.img-lgo{
+    object-fit: contain;
+}
+.bg-icon{
+    background: none;
+}
+.clr{
+    background-color: #5E50A1;
+    color: whitesmoke;
+    border: none;
+}
+.clr:hover{
+    background-color: #FBB017;
+    color: whitesmoke;
+    border: none;
+}

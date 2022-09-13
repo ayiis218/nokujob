@@ -5,6 +5,9 @@
 }
 .profilpict {
 	border-radius: 50%;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
 }
 
 .navbar-profil {
@@ -165,4 +168,21 @@
 
 .roundedCircle {
 	border-radius: 50%;
+}
+.job{
+	margin-top: -2%;
+}
+.div-job{
+	margin-top: -3%;
+}
+
+.ml{
+	margin-left: -1%;
+}
+.btn-skill{
+	color: #f6f7f8;
+	background-color: #fbb017;
+}
+.clr-g{
+	color: #9EA0A5;
 }

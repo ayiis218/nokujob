@@ -1,54 +1,51 @@
 import React from "react";
-import { Container, Row, Col, Button, Card, Form,  Navbar, } from "react-bootstrap";
-// import profil from "../../assets/img/profil.jpg";
+import { Container, Row, Col, Button, Card, Form, Navbar} from "react-bootstrap";
 import { GeoAlt, Search } from "react-bootstrap-icons";
-import userdata from "./userdummy";
+// import userdata from "./userdummy";
 import { Link } from "react-router-dom";
+import InputGroup from "react-bootstrap/InputGroup";
+import avatar from "../../assets/img/profil.jpg";
+import "../../Style/HomeStyles.css";
+import ReactPaginate from "react-paginate";
 
 import axios from "axios";
 
-// import axios from "axios";
 const Datacard = function () {
-	// const [listUsers, setListUsers] = React.useState([]);
-	// const [filterValue, setFilterValue]=React.useState("");
-	const [data, setData] = React.useState(userdata);
-	// const [currentPage,setCurrentPage]=React.useState(1)
-	// const [postperPage,setPostperPage]=React.useState(10)
+	const [data, setData] = React.useState([]);
+	const [sort, setSort] = React.useState();
+	const [page, setPage] = React.useState(1);
+	const [keyword, setKeyWord] = React.useState("");
+	const [query, setQuery] = React.useState("");
+
+	const token =
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsIm5hbWUiOiJOYW5hbmcgS29tYXJ1ZGluIiwiZW1haWwiOiJuYW5hbmcxMjNAZ21haWwuY29tIiwidHlwZSI6InJlY3J1aXRlciIsImlhdCI6MTY2MzA4Njc5MywiZXhwIjoxNjYzMTA0NzkzfQ.yxyXOAebjIUXuOMmnFYqOLQ8XncgvY-FmSvge02iayc";
+
+	const config = {
+		headers: { Authorization: `Bearer ${token}` },
+	};
+	const getData = async () => {
+		await axios.get(`https://sokujobs-server-production.up.railway.app/jobseekers?search=${keyword}&sort=${sort}&size=&page=${page}`, config).then((res) => {
+			
+			setData(res.data?.rows);
+		}).catch(error => console.log(error));
+	};
 
 	React.useEffect(() => {
-		axios.get("http://localhost:8000/jobseeker").then((res) => {
-			setData(res.data);
-		});
-	});
+		getData();
+	}, [keyword, page]);
 
-	const filterSearch = (skill) => {
-		axios.get(`http://localhost:8000/jobseeker?search=${skill}`).then((res) => {
-			setData(res.data);
-		});
+	const changePage = ({ selected }) => {
+		console.log(selected)
+		setPage(selected);
+	};
+	const searchData = (e) => {
+		console.log(e);
+		e.preventDefault();
+		setPage(1);
+		setKeyWord(query);
 	};
 
-	// const lastindexpost=currentPage*postperPage;
-	// const firstpost=lastindexpost-postperPage;
-	
 
-	// const filterSearch = (category) => {
-	// 	const result = userdata.filter((item) => {
-	// 		return item.username.toLowerCase().includes(category);
-	// 	});
-	// 	setData(result);
-	// };
-
-	const sortOption = ["username", "skill", "location", "freelance", "fulltime"];
-	const [sortValue, setSortValue] = React.useState("");
-
-	const handleSort = (value) => {
-		
-		setSortValue(value);
-
-		axios.get(`http://localhost:8000/jobseeker?username?_sort=${value}&_order=asc`).then((res) => {
-			setData(res.data);
-		});
-	};
 
 	return (
 		<>
@@ -56,37 +53,32 @@ const Datacard = function () {
 				<Col lg={9} className="mx-auto mb-5 bg-light">
 					<Navbar bg="white shadow-lg" expand="lg" placeholder="Search">
 						<Form className="col-9 border-0">
-							<Form.Control
-								type="search"
-								placeholder="Search by any skills"
-								className="border-0 bg-transparent mx-3 d-inline searcbar position-relative "
-								aria-label="Search"
-								onChange={(e) => {
-									filterSearch(e.target.value);
-								}}
-							/>
+							<InputGroup>
+								<Form.Control
+									type="search"
+									placeholder="Search by any skills"
+									className="border-0 bg-transparent mx-3 d-inline searcbar position-relative "
+									aria-label="Search"
+									aria-describedby="basic-addon2"
+									value={query}
+									onChange={(e) => setQuery(e.target.value)}
+								/>
+								<InputGroup.Text id="basic-addon2" className="border-0 bg-icon">
+									<Search />
+								</InputGroup.Text>
+							</InputGroup>
 						</Form>
 						<Navbar.Collapse className="justify-content-end">
-						<div>
-							<Search className="d-inline " />
-						</div>
-						<div className="d-inline vr mx-3" />
-						<Form.Select
-							aria-label="Sort"
-							className="bg-transparrant border-0 d-inline "
-							onChange={handleSort}
-							value={sortValue}
-						>
-							{sortOption.map((item) => (
-								<option value={item} key={item}>
-									{item}
-								</option>
-							))}
-						</Form.Select>
-						<Button variant="outline-primary button-masuk mx-3 d-inline"
-
-						>Search</Button>
-					</Navbar.Collapse>
+							<div className="d-inline vr mx-3" />
+							<Form.Select aria-label="Default select example" onChange={(e) => setSort(e.target.value)}>
+								<option>Sort</option>
+								<option value="name">Sortir berdasarkan nama</option>
+								<option value="skill">Sortir berdasarkan Skill</option>
+							</Form.Select>
+							<Button variant="outline-primary button-masuk mx-3 d-inline clr" onClick={searchData}>
+								Search
+							</Button>
+						</Navbar.Collapse>
 					</Navbar>
 				</Col>
 			</div>
@@ -97,24 +89,29 @@ const Datacard = function () {
 						<Card.Body>
 							<Container>
 								{data.map((item) => (
-									<Row>
+									<Row className="border mb-1">
 										<Col lg={9}>
 											<Row>
-												<Col lg={3}>
-													<Card.Img className="profilpict" src={item?.profil} alt="" height={150} />
+												<Col lg={3} className=" d-flex justify-content-center p-2">
+													<Card.Img
+														className="profilpict"
+														src={item?.user_profile?.photo ? item?.user_profile?.photo : avatar}
+														alt="image"
+														height={150}
+														width={120}
+													/>
 												</Col>
-												<Col lg={9} className="">
-													<h4>{item?.username}</h4>
-													<p>{item?.job}</p>
-													<Row className="mb-2">
-														<span>
-															<GeoAlt className="d-inline" />
-															<p className="d-inline">{item?.lokasi}</p>
+												<Col lg={9}>
+													<h5 className="fw-semibold">{item?.name}</h5>
+													<p className="job clr-g">{item?.user_profile?.position}</p>
+													<Row className=" div-job">
+														<span className=" ml clr-g">
+															<GeoAlt className="d-inline" /> <p className="d-inline">{item?.user_profile?.domicile}</p>
 														</span>
 													</Row>
-													<div className="">
+													<div className="p-1 ml">
 														{item?.skills.map((e) => {
-															return <Button variant="warning sm mx-2">{e?.name}</Button>;
+															return <Button variant="warning sm mx-2 btn-skill">{e?.name}</Button>;
 														})}
 													</div>
 												</Col>
@@ -122,7 +119,7 @@ const Datacard = function () {
 										</Col>
 										<Col lg={2} className="justify-content-center mx-auto">
 											<Row className="mb-3">
-												<Link to="/employed">
+												<Link to={`/employed/${item?.id}`}>
 													<Button variant="btn button-profil mt-5 text-light">Lihat Profil</Button>
 												</Link>
 											</Row>
@@ -134,6 +131,27 @@ const Datacard = function () {
 						</Card.Body>
 					</Card>
 				</Col>
+			</div>
+			<div  className="container border d-flex flex-rows justify-content-center">
+				<Row>
+					
+					<ReactPaginate
+					previousLabel="previous"
+					nextLabel="next"
+					pageCount={Math.min(10, page)}
+					onPageChange={changePage}
+					pageRangeDisplayed={4}
+					marginPagesDisplayed={2}
+					containerClassName="pagination"
+					pageLinkClassName="page-item page-link"
+					previousLinkClassName="page-link"
+					nextLinkClassName="page-link "
+					activeLinkClassName="page-item active"
+					disabledLinkClassName="page-item disabled"
+				/>	
+				</Row>
+			
+			
 			</div>
 		</>
 	);

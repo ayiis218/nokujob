@@ -18,7 +18,7 @@ import Chat from "./pages/Chat";
 
 import "./Style/adi.css"; // CSS
 import "./Style/HomeStyles.css"; // CSS
-import EmployeeProfile from "./pages/EmpProfile";
+import EmployeeProfile from "./pages/employed/EmpProfile";
 import EmployeeEdit from "./pages/EmpEdit";
 import CompanyProfile from "./pages/ComProfile";
 import CompanyEdit from "./pages/ComEdit";
@@ -40,7 +40,7 @@ function App() {
 								<Route path="register/seeker" element={<Seeker />} />
 								<Route path="register/recruiter" element={<Recruiter />} />
 								<Route path="chat" element={<Chat />} />
-								<Route path="employed" element={<EmployeeProfile />} />
+								<Route path="employed/:id" element={<EmployeeProfile />} />
 								<Route path="employed/edit" element={<EmployeeEdit />} />
 								<Route path="company" element={<CompanyProfile />} />
 								<Route path="company/edit" element={<CompanyEdit />} />

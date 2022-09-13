@@ -24,7 +24,7 @@
 }
 .circleImage {
 	border-radius: 50%;
-	width: 100%;
+	object-fit: cover;
 }
 .loc {
 	/* 'location logo' on side bar Profile*/
