@@ -1,6 +1,7 @@
 import React from "react";
-import { Container, Row, Col, Button, Card, Form, Navbar} from "react-bootstrap";
+import { Container, Row, Col, Button, Card, Form, Navbar } from "react-bootstrap";
 import { GeoAlt, Search } from "react-bootstrap-icons";
+import Cookies from "js-cookie";
 // import userdata from "./userdummy";
 import { Link } from "react-router-dom";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -13,21 +14,27 @@ import axios from "axios";
 const Datacard = function () {
 	const [data, setData] = React.useState([]);
 	const [sort, setSort] = React.useState();
-	const [page, setPage] = React.useState(1);
+	const [page, setPage] = React.useState(2);
 	const [keyword, setKeyWord] = React.useState("");
 	const [query, setQuery] = React.useState("");
+	const token = Cookies.get("token");
 
-	const token =
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsIm5hbWUiOiJOYW5hbmcgS29tYXJ1ZGluIiwiZW1haWwiOiJuYW5hbmcxMjNAZ21haWwuY29tIiwidHlwZSI6InJlY3J1aXRlciIsImlhdCI6MTY2MzA4Njc5MywiZXhwIjoxNjYzMTA0NzkzfQ.yxyXOAebjIUXuOMmnFYqOLQ8XncgvY-FmSvge02iayc";
+	// const token =
+	// 	"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsIm5hbWUiOiJOYW5hbmcgS29tYXJ1ZGluIiwiZW1haWwiOiJuYW5hbmcxMjNAZ21haWwuY29tIiwidHlwZSI6InJlY3J1aXRlciIsImlhdCI6MTY2MzA4Njc5MywiZXhwIjoxNjYzMTA0NzkzfQ.yxyXOAebjIUXuOMmnFYqOLQ8XncgvY-FmSvge02iayc";
 
 	const config = {
 		headers: { Authorization: `Bearer ${token}` },
 	};
 	const getData = async () => {
-		await axios.get(`https://sokujobs-server-production.up.railway.app/jobseekers?search=${keyword}&sort=${sort}&size=&page=${page}`, config).then((res) => {
-			
-			setData(res.data?.rows);
-		}).catch(error => console.log(error));
+		await axios
+			.get(
+				`https://sokujobs-server-production.up.railway.app/jobseekers?search=${keyword}&sort=${sort}&size=&page=${page}`,
+				config
+			)
+			.then((res) => {
+				setData(res.data?.rows);
+			})
+			.catch((error) => console.log(error));
 	};
 
 	React.useEffect(() => {
@@ -35,7 +42,7 @@ const Datacard = function () {
 	}, [keyword, page]);
 
 	const changePage = ({ selected }) => {
-		console.log(selected)
+		console.log(selected);
 		setPage(selected);
 	};
 	const searchData = (e) => {
@@ -44,8 +51,6 @@ const Datacard = function () {
 		setPage(1);
 		setKeyWord(query);
 	};
-
-
 
 	return (
 		<>
@@ -132,26 +137,23 @@ const Datacard = function () {
 					</Card>
 				</Col>
 			</div>
-			<div  className="container border d-flex flex-rows justify-content-center">
+			<div className="container border d-flex flex-rows justify-content-center">
 				<Row>
-					
 					<ReactPaginate
-					previousLabel="previous"
-					nextLabel="next"
-					pageCount={Math.min(10, page)}
-					onPageChange={changePage}
-					pageRangeDisplayed={4}
-					marginPagesDisplayed={2}
-					containerClassName="pagination"
-					pageLinkClassName="page-item page-link"
-					previousLinkClassName="page-link"
-					nextLinkClassName="page-link "
-					activeLinkClassName="page-item active"
-					disabledLinkClassName="page-item disabled"
-				/>	
+						previousLabel="previous"
+						nextLabel="next"
+						pageCount={Math.min(10, page)}
+						onPageChange={changePage}
+						pageRangeDisplayed={4}
+						marginPagesDisplayed={2}
+						containerClassName="pagination"
+						pageLinkClassName="page-item page-link"
+						previousLinkClassName="page-link"
+						nextLinkClassName="page-link "
+						activeLinkClassName="page-item active"
+						disabledLinkClassName="page-item disabled"
+					/>
 				</Row>
-			
-			
 			</div>
 		</>
 	);
