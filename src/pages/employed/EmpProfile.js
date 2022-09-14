@@ -73,7 +73,7 @@ export default function EmpProfile() {
 									<div className="pSideBarProfile pb-3">{data?.type}</div>
 									<div className="pSideBarProfile text pb-3">{data?.user_profile?.shortDesc}</div>
 
-									<Link to="/hire">
+									<Link to={`/hire/${id}`}>
 										<Button renderAS="button" className="Button doit mt-3 mb-4">
 											Hire
 										</Button>

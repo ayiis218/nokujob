@@ -4,19 +4,18 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Image, Button } from "react-bootstrap";
 // import { Link } from "react-router-dom";
 import axios from "../helpers/axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import Loading from "react-content-loader";
-
 import loc from "../assets/icons/locLogo.png"; //
 
 import Navbar1 from "../components/organisms/Navbar1";
 import Footer from "../components/organisms/Footer";
 
 export default function Hire() {
+	const { id } = useParams();
 	const Navigate = useNavigate();
 	const token = Cookies.get("token");
-	// const id = Cookies.get("users");
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
 	console.log(data);
@@ -39,7 +38,7 @@ export default function Hire() {
 	const getUser = () => {
 		setLoading(true);
 		axios
-			.get(`profile`)
+			.get(`users/${id}`)
 			.then((res) => {
 				setData(res?.data?.user_profile);
 				setLoading(false);
@@ -68,8 +67,8 @@ export default function Hire() {
 										<div className="whiteBg pt-4 pb-2 px-4">
 											<Row>
 												<Col />
-												<Col xs={6}>
-													<Image className="circleImage pb-4" src={data.photo} />
+												<Col xs={6} className="overflow-hidden ">
+													<Image className="circleImage pb-4" src={data.photo} width={110} height={150} />
 												</Col>
 												<Col />
 											</Row>

@@ -5,10 +5,11 @@ import { Container, Nav, Navbar, Popover, OverlayTrigger, Image } from "react-bo
 import logo from "../../assets/img/logo.png";
 import profil from "../../assets/img/profil.jpg";
 import { Bell, Envelope } from "react-bootstrap-icons";
-import "../../Style/Navbar.css"
+import "../../Style/Navbar.css";
 
 function Navbar1() {
 	const users = Cookies.get("type");
+	const id = Cookies.get("users");
 	const [data, setData] = useState("");
 
 	useEffect(() => {
@@ -38,7 +39,7 @@ function Navbar1() {
 					</OverlayTrigger>
 					<Envelope className="me-3 justify-content-center" />
 					{data === "recruiter" ? (
-						<Link to="/company">
+						<Link to={`/company/${id}`}>
 							<img
 								className="navbar-profil justify-content-center ms-2 mt-0"
 								src={profil}
@@ -48,7 +49,7 @@ function Navbar1() {
 							/>
 						</Link>
 					) : (
-						<Link to="/employed">
+						<Link to={`/employed/${id}`}>
 							<img
 								className="navbar-profil justify-content-center ms-2 mt-0"
 								src={profil}

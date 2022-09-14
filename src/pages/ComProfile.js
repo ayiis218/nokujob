@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-expressions */
 import React, { useState, useEffect } from "react";
 import { Row, Col, Image, Button, Container } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Cookies from "js-cookie";
 import Loading from "react-content-loader";
 import axios from "../helpers/axios";
@@ -18,9 +18,9 @@ import Navbar1 from "../components/organisms/Navbar1";
 import Footer from "../components/organisms/Footer";
 
 export default function ComProfile() {
+	const { id } = useParams();
 	const Navigate = useNavigate();
 	const token = Cookies.get("token");
-	const id = Cookies.get("users");
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
 
@@ -75,7 +75,7 @@ export default function ComProfile() {
 													<Row>
 														<Col />
 														<Col xs={6}>
-															<Image className="circleImage pb-3" src={data.photo} />
+															<Image className="circleImage" src={data.photo} width={140} height={140} />
 														</Col>
 														<Col />
 													</Row>

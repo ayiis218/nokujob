@@ -16,7 +16,7 @@ import Footer from "../components/organisms/Footer";
 export default function EmpEdit() {
 	const Navigate = useNavigate();
 	const token = Cookies.get("token");
-	// const id = Cookies.get("users");
+	const id = Cookies.get("users");
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
 	console.log(data);
@@ -68,7 +68,7 @@ export default function EmpEdit() {
 											<Row>
 												<Col />
 												<Col xs={6}>
-													<Image className="circleImage pb-3" src={data.photo} />
+													<Image className="circleImage pb-3" src={data.photo} width={140} height={140} />
 													<Row className="pb-4">
 														<Link to="/#editAvatarCompanyURL" className="logoEdit inlineIconText">
 															<Image src={edit} />
@@ -93,10 +93,10 @@ export default function EmpEdit() {
 									{/* BUTTON FOR SAVE & CANCEL OF EDITING */}
 									<div className="profilSaveCancel">
 										<Row>
-											<Link to="/employed">
+											<Link to={`/employed/${id}`}>
 												<Button className="Button doit mt-3 mb-2">Save</Button>
 											</Link>
-											<Link to="/employed">
+											<Link to={`/employed/${id}`}>
 												<Button className="Button cancel mb-2">Cancel</Button>
 											</Link>
 										</Row>
