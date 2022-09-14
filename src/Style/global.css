@@ -1,3 +1,7 @@
+body {
+	overflow-x: hidden !important;
+}
+
 .gradientBGPage {
 	/* gradient part purple in profile page */
 	background: linear-gradient(to bottom, #5e50a1 16rem, #e5e5e5 16rem);

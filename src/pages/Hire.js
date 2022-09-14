@@ -1,15 +1,56 @@
-import React from "react";
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-use-before-define */
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Image, Button } from "react-bootstrap";
 // import { Link } from "react-router-dom";
-
-import profil from "../assets/img/profil.jpg";
+import axios from "../helpers/axios";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+import Loading from "react-content-loader";
 
 import loc from "../assets/icons/locLogo.png"; //
 
-import Navbar1 from "../components/organisms/Navbar1Adi";
-import Footer from "../components/organisms/FooterAdi";
+import Navbar1 from "../components/organisms/Navbar1";
+import Footer from "../components/organisms/Footer";
 
 export default function Hire() {
+	const Navigate = useNavigate();
+	const token = Cookies.get("token");
+	// const id = Cookies.get("users");
+	const [data, setData] = useState([]);
+	const [loading, setLoading] = useState(false);
+	console.log(data);
+
+	useEffect(() => {
+		if (!token) {
+			alert.fire({
+				title: "Failed",
+				text: "Please login",
+				icon: "Error",
+			});
+			Navigate("/auth/login");
+		}
+	}, [token]);
+
+	useEffect(() => {
+		getUser();
+	}, []);
+
+	const getUser = () => {
+		setLoading(true);
+		axios
+			.get(`profile`)
+			.then((res) => {
+				setData(res?.data?.user_profile);
+				setLoading(false);
+			})
+			.catch((err) => {
+				err?.response;
+				console.log(err?.response?.data?.message);
+				setLoading(false);
+			});
+	};
+
 	return (
 		<>
 			<Navbar1 />
@@ -17,55 +58,51 @@ export default function Hire() {
 				<Container>
 					<Row className="py-5">
 						<Col sm={1} />
-
-						{/* LEFT SIDE BAR */}
-						<Col sm={3} className="me-3">
-							<Row>
-								<div className="whiteBg pt-4 pb-2 px-4">
+						{loading ? (
+							<Loading />
+						) : (
+							<>
+								{/* LEFT SIDE BAR */}
+								<Col sm={3} className="me-3">
 									<Row>
-										<Col />
-										<Col xs={6}>
-											<Image className="circleImage pb-4" src={profil} />
-										</Col>
-										<Col />
+										<div className="whiteBg pt-4 pb-2 px-4">
+											<Row>
+												<Col />
+												<Col xs={6}>
+													<Image className="circleImage pb-4" src={data.photo} />
+												</Col>
+												<Col />
+											</Row>
+											<div className="h1SideBarProfile pb-1">{data.name}</div>
+
+											<div className="deskCompJSeekProfile pb-3">{data.position}</div>
+
+											<Row className="pSideBarProfile pb-3">
+												<Image className="loc" src={loc} />
+												{data.domicile}
+											</Row>
+
+											<div className="pSideBarProfile pb-1">{data.shortDesc}</div>
+
+											<div className="h1SideBarProfile mb-2">Skill</div>
+											<div className="mb-4 d-flex flex-wrap">
+												<div className="theTag">javascript</div>
+												<div className="theTag">python</div>
+												<div className="theTag">java</div>
+												<div className="theTag">C++</div>
+												<div className="theTag">php</div>
+												<div className="theTag">Golang</div>
+											</div>
+										</div>
 									</Row>
-									<div className="h1SideBarProfile pb-1">Louis Tomlinson</div>
-
-									<div className="deskCompJSeekProfile pb-3">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-									</div>
-
-									<Row className="pSideBarProfile pb-3">
-										<Image className="loc" src={loc} />
-										Purwokerto, Jawa Tengah
-									</Row>
-
-									<div className="pSideBarProfile pb-1">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-										et dolore magna aliqua. Ut enim ad minim veniam, quis
-										{/* nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum */}
-									</div>
-
-									<div className="h1SideBarProfile mb-2">Skill</div>
-									<div className="mb-4 d-flex flex-wrap">
-										<div className="theTag">javascript</div>
-										<div className="theTag">python</div>
-										<div className="theTag">java</div>
-										<div className="theTag">C++</div>
-										<div className="theTag">php</div>
-										<div className="theTag">Golang</div>
-									</div>
-								</div>
-							</Row>
-						</Col>
+								</Col>
+							</>
+						)}
 
 						{/* RIGHT SIDE BAR checkBGCompJSeekProfile */}
 						<Col sm={7} className="ps-5 pe-5">
-							<div className="titleContactJseek mb-2">Contact to NAME_JOBSEEKER</div>
-							<div className="deskCompJSeekProfile mb-5">
-								Description before hire Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut
-							</div>
+							<div className="titleContactJseek mb-2">{data.name}</div>
+							<div className="deskCompJSeekProfile mb-5">{data.shortDesc}</div>
 
 							{/* Form for Company to hiring Jobseeker */}
 							<Form>

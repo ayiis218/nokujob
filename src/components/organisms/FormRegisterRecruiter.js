@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
@@ -16,14 +17,15 @@ function FormRegister() {
 	const [email, setEmail] = useState("");
 	const [company, setCompany] = useState("");
 	const [position, setPosition] = useState("");
-	const [phone, setPhone] = useState("");
+	const [phoneNumber, setPhone] = useState("");
 	const [password, setPassword] = useState("");
 	const [rePassword, setRePassword] = useState("");
+	const [type, setType] = useState("");
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const field = !name || !email || !company || !position || !phone || !password || !rePassword;
+		const field = !name || !email || !company || !position || !phoneNumber || !password || !rePassword;
 		if (field) {
 			Alert.fire({
 				icon: "Error",
@@ -37,13 +39,13 @@ function FormRegister() {
 			});
 		} else {
 			setLoading(true);
-			registerRecruiter({ name, email, company, position, phone, password, rePassword })
+			registerRecruiter({ name, email, phoneNumber, type, password })
 				.then((res) => {
-					Navigate("login");
+					Navigate("/login");
 
 					Alert.fire({
 						icon: "success",
-						text: `Register success ${res}`,
+						text: `Register success`,
 					});
 				})
 				.catch((err) => {
@@ -69,7 +71,7 @@ function FormRegister() {
 								<div className="col-12">
 									<h2>Halo, Pewpeople</h2>
 									<span className="secondary-color description mb-4">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.
+										Temukan developer berbakat & terbaik di berbagai bidang keahlian
 									</span>
 									<hr className="separator w-100 mb-0 mt-1" />
 								</div>
@@ -147,6 +149,7 @@ function FormRegister() {
 											variant="warning"
 											className="w-100 btn-main pt-3 pb-3 mt-3 mb-2"
 											isloading={loading}
+											onClick={() => setType("recruiter")}
 										>
 											Daftar Recruiter
 										</Button>

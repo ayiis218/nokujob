@@ -18,7 +18,7 @@ function register() {
 								<div className="col-12">
 									<h2>Halo, Pewpeople</h2>
 									<span className="secondary-color description mb-4">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.
+										Temukan developer berbakat & terbaik di berbagai bidang keahlian
 									</span>
 									<hr className="separator w-100 mb-0 mt-1" />
 								</div>

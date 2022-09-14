@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import { Container, Nav, Navbar, Popover, OverlayTrigger, Image } from "react-bootstrap";
 import logo from "../../assets/img/logo.png";
@@ -7,10 +8,18 @@ import { Bell, Envelope } from "react-bootstrap-icons";
 import "../../Style/Navbar.css"
 
 function Navbar1() {
+	const users = Cookies.get("type");
+	const [data, setData] = useState("");
+
+	useEffect(() => {
+		setData(users);
+	}, []);
 	return (
 		<Navbar bg="white" expand="lg">
 			<Container>
-				<Image className="navbar-brand img-lgo" src={logo} alt="" width={100} height={45} />
+				<Link to="/home">
+					<Image className="navbar-brand " src={logo} alt="" width={100} height={45} />
+				</Link>
 				<Navbar.Collapse id="navbarScroll">
 					<Nav className="me-auto " style={{ maxHeight: "0px" }} navbarScroll />
 					<OverlayTrigger
@@ -25,18 +34,30 @@ function Navbar1() {
 							</Popover>
 						}
 					>
-						<Bell className="me-3"/>
+						<Bell className="me-3" />
 					</OverlayTrigger>
 					<Envelope className="me-3 justify-content-center" />
-					<Link to="/employed">
-						<img
-							className="navbar-profil justify-content-center ms-2 mt-0"
-							src={profil}
-							alt=""
-							width={25}
-							height={25}
-						/>
-					</Link>
+					{data === "recruiter" ? (
+						<Link to="/company">
+							<img
+								className="navbar-profil justify-content-center ms-2 mt-0"
+								src={profil}
+								alt=""
+								width={25}
+								height={25}
+							/>
+						</Link>
+					) : (
+						<Link to="/employed">
+							<img
+								className="navbar-profil justify-content-center ms-2 mt-0"
+								src={profil}
+								alt=""
+								width={25}
+								height={25}
+							/>
+						</Link>
+					)}
 				</Navbar.Collapse>
 			</Container>
 		</Navbar>
