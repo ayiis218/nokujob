@@ -181,7 +181,7 @@
 	border-radius: 50%;
 }
 .job{
-	margin-top: -2%;
+	margin-top: -1%;
 }
 .div-job{
 	margin-top: -3%;
@@ -192,7 +192,11 @@
 }
 .btn-skill{
 	color: #f6f7f8;
-	background-color: #fbb017;
+    background-color: #fbb017;
+    height: 28px;
+    font-size: 10px;
+    border-radius: 6px
+;
 }
 .clr-g{
 	color: #9EA0A5;

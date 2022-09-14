@@ -115,7 +115,7 @@ const Datacard = function () {
 													</Row>
 													<div className="p-1 ml">
 														{item?.skills.map((e) => {
-															return <Button variant="warning sm mx-2 btn-skill">{e?.name}</Button>;
+															return <Button variant="warning sm me-1 btn-skill">{e?.name}</Button>;
 														})}
 													</div>
 												</Col>
@@ -141,7 +141,7 @@ const Datacard = function () {
 					<ReactPaginate
 						previousLabel="Previous"
 						nextLabel="Next"
-						pageCount={Math.min(10, pages)}
+						pageCount={Math.min(5, pages)}
 						onPageChange={changePage}
 						containerClassName="pagination"
 						pageLinkClassName="page-item page-link m-1 rounded clr-paginate "
