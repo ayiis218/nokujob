@@ -47,6 +47,7 @@ function FormLogin() {
 					}
 				})
 				.catch((err) => {
+					console.log(err);
 					alert.fire({
 						title: "Failed!",
 						text: `Cek password ${err.message}`,

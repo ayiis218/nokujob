@@ -1,9 +1,10 @@
-import axios from "../../helpers/axios";
+// import axios from "../../helpers/axios";
+import axios from "axios"
 
 export const login = (data) => {
 	return new Promise((resolve, reject) => {
 		axios
-			.post(`auth/login`, data)
+			.post(`https://sokujobs-server-production.up.railway.app/auth/login`, data)
 			.then((res) => {
 				resolve(res);
 			})

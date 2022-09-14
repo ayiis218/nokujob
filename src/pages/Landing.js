@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Row, Image, Carousel } from "react-bootstrap";
-
+import { useNavigate} from "react-router-dom";
 import Navbar2 from "../components/organisms/Navbar2";
 import Footer from "../components/organisms/Footer";
 import Unit1 from "../components/organisms/Unit1";
@@ -11,6 +11,11 @@ import Comments from "../components/organisms/Comments";
 import layer2 from "../assets/img/layer2.png";
 
 function App() {
+	const navigate = useNavigate();
+	const handleLogin =(e) =>{
+		e.preventDefault();
+		navigate("/register");
+	}
 	return (
 		<div className="LandingPage">
 			<Container fluid>
@@ -26,7 +31,7 @@ function App() {
 					<Unit3 />
 				</Row>
 				<Row className="item-last  mx-auto col-10">
-					<h2 className="text-center">Their Opinion About Peworld</h2>
+					<h2 className="text-center">Their Opinion About SokuJobs</h2>
 					<Row className="mt-5 px-5 mb-5">
 						<Carousel variant="dark">
 							<Carousel.Item>
@@ -43,10 +48,10 @@ function App() {
 					<div className="unit5 mx">
 						<Row className="mx-auto col-10 position-absolute text-light">
 							<Col lg={9}>
-								<h2>Lorem ipsum dolor sit amet</h2>
+								<h4>Mulai termukan kandidat terbaik untuk perusahaan kamu</h4>
 							</Col>
 							<Col lg={3} className="mx-auto">
-								<Button className="mx-auto " variant="light" size="lg">
+								<Button className="mx-auto " variant="light" size="lg" onClick={handleLogin}>
 									Mulai Dari Sekarang
 								</Button>
 							</Col>

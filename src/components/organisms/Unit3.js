@@ -11,7 +11,7 @@ function Unit3() {
 			<Col className="col-5 ">
 				<Row>
 					<h2>Skill Tallent</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
+					<p>Temukan lebih banyak skill dari mulai berbagai bahasa pemograman</p>
 				</Row>
 				<Row>
 					<Col lg={5}>

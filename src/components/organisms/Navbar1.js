@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 import { Container, Nav, Navbar, Popover, OverlayTrigger, Image } from "react-bootstrap";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logosk.png";
 import profil from "../../assets/img/profil.jpg";
 import { Bell, Envelope } from "react-bootstrap-icons";
 import "../../Style/Navbar.css"
@@ -18,7 +18,7 @@ function Navbar1() {
 		<Navbar bg="white" expand="lg">
 			<Container>
 				<Link to="/home">
-					<Image className="navbar-brand " src={logo} alt="" width={100} height={45} />
+					<Image className="navbar-brand  lgo-img" src={logo} alt="" width={100} height={45} />
 				</Link>
 				<Navbar.Collapse id="navbarScroll">
 					<Nav className="me-auto " style={{ maxHeight: "0px" }} navbarScroll />

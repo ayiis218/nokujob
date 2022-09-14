@@ -15,8 +15,8 @@ import compImage from "../../assets/img/exCompLogo.png";
 import axios from "axios"
 
 // Azis code navbar and footer to Adi code
-import Navbar1 from "../../components/organisms/Navbar1Adi";
-import Footer from "../../components/organisms/FooterAdi";
+import Navbar1 from "../../components/organisms/Navbar1";
+import Footer from "../../components/organisms/Footer";
 
 
 

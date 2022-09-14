@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logopng.png";
 import { Link } from "react-router-dom";
 
 function Navbar2() {

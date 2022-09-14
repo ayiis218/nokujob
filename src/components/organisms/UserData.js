@@ -18,7 +18,7 @@ const Datacard = function () {
 	const [query, setQuery] = React.useState("");
 
 	const token =
-		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsIm5hbWUiOiJOYW5hbmcgS29tYXJ1ZGluIiwiZW1haWwiOiJuYW5hbmcxMjNAZ21haWwuY29tIiwidHlwZSI6InJlY3J1aXRlciIsImlhdCI6MTY2MzA4Njc5MywiZXhwIjoxNjYzMTA0NzkzfQ.yxyXOAebjIUXuOMmnFYqOLQ8XncgvY-FmSvge02iayc";
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTYsIm5hbWUiOiJOYW5hbmcgS29tYXJ1ZGluIiwiZW1haWwiOiJuYW5hbmdrb21hcnVkaW4yMDIyQGdtYWlsLmNvbSIsInR5cGUiOiJyZWNydWl0ZXIiLCJpYXQiOjE2NjMxMjc0NTMsImV4cCI6MTY2MzE0NTQ1M30.qpyQJvM9_ZWYHnhIP8tRbEa8vcNp2_L9MTg4bxqYSbA";
 
 	const config = {
 		headers: { Authorization: `Bearer ${token}` },

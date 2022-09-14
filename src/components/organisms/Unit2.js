@@ -21,25 +21,25 @@ function Unit2() {
 			</Col>
 			<Col lg={6} className="">
 				<Col>
-					<h2>Kenapa harus mencari tallent di peworld</h2>
+					<h2>Kenapa harus mencari tallent di sokujobs</h2>
 					<Row className="mb-2">
 						<span>
-							<CheckCircleFill className="checklist d-inline" /> <p className="d-inline">Lorem ipsum dolor sit amet.</p>
+							<CheckCircleFill className="checklist d-inline" /> <p className="d-inline">Sistem manajemen kandidat yang mudah digunakan</p>
 						</span>
 					</Row>
 					<Row className="mb-2">
 						<span>
-							<CheckCircleFill className="checklist d-inline" /> <p className="d-inline">Lorem ipsum dolor sit amet.</p>
+							<CheckCircleFill className="checklist d-inline" /> <p className="d-inline">2x lebih banyak ruang iklan untuk menampilkan 3 proposisi nilai perusahaan teratas Anda</p>
 						</span>
 					</Row>
 					<Row className="mb-2">
 						<span>
-							<CheckCircleFill className="checklist d-inline" /> <p className="d-inline">Lorem ipsum dolor sit amet.</p>
+							<CheckCircleFill className="checklist d-inline" /> <p className="d-inline">Jangkauan lebih luas ke kandidat</p>
 						</span>
 					</Row>
 					<Row className="mb-2">
 						<span>
-							<CheckCircleFill className="checklist d-inline" /> <p className="d-inline">Lorem ipsum dolor sit amet.</p>
+							<CheckCircleFill className="checklist d-inline" /> <p className="d-inline">Sumber terintegrasi mulus yang memudahkan pencarian talenta terbaik.</p>
 						</span>
 					</Row>
 				</Col>
