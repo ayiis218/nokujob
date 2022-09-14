@@ -12,34 +12,32 @@ import gitlab from "../../assets/icons/gitlabLogo.png"; //
 import profil from "../../assets/img/profil.jpg";
 import p1 from "../../assets/img/exPorto1.png";
 import compImage from "../../assets/img/exCompLogo.png";
-import axios from "axios"
+import axios from "axios";
 
 // Azis code navbar and footer to Adi code
 import Navbar1 from "../../components/organisms/Navbar1";
 import Footer from "../../components/organisms/Footer";
 
-
-
-
 export default function EmpProfile() {
-	const { id} = useParams();
+	const { id } = useParams();
 	const [data, setData] = React.useState([]);
-	const [skills, setSkills] = React.useState([])
-	const [dataFolio, setPortofolio] = React.useState([])
-	const [dataExp, setExperience] = React.useState([])
-	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsIm5hbWUiOiJOYW5hbmcgVGFtcGFuIiwiZW1haWwiOiJuYW5hbmdAZ21haWwuY29tIiwidHlwZSI6ImNvbXBhbnkiLCJpYXQiOjE2NjMwNjY4MTQsImV4cCI6MTY2MzA4NDgxNH0.1IhHzUu6kpstlF95rTJmSH2dOvGCvhcW19E40wZr4ZU'
+	const [skills, setSkills] = React.useState([]);
+	const [dataFolio, setPortofolio] = React.useState([]);
+	const [dataExp, setExperience] = React.useState([]);
+	const token =
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsIm5hbWUiOiJOYW5hbmcgVGFtcGFuIiwiZW1haWwiOiJuYW5hbmdAZ21haWwuY29tIiwidHlwZSI6ImNvbXBhbnkiLCJpYXQiOjE2NjMwNjY4MTQsImV4cCI6MTY2MzA4NDgxNH0.1IhHzUu6kpstlF95rTJmSH2dOvGCvhcW19E40wZr4ZU";
 	React.useEffect(() => {
 		const config = {
-			headers: { Authorization: `Bearer ${token}` }
+			headers: { Authorization: `Bearer ${token}` },
 		};
-		axios.get(`https://sokujobs-server-production.up.railway.app/users/${id}`,config).then((res) => {
+		axios.get(`https://sokujobs-server-production.up.railway.app/users/${id}`, config).then((res) => {
 			setData(res.data);
 			setSkills(res.data.skills);
 			setPortofolio(res.data.portfolios);
-			setExperience(res.data.companies)
+			setExperience(res.data.companies);
 		});
-	},[]);
-	console.log(data.name)
+	}, []);
+	console.log(data.name);
 
 	return (
 		<>
@@ -56,7 +54,12 @@ export default function EmpProfile() {
 								<div className="whiteBg pt-4 pb-5 px-4">
 									<Row>
 										<Col xs={12} className="overflow-hidden text-center ">
-											<Image className="circleImage pb-3" src={data?.user_profile?.photo? data.user_profile.photo : profil} width={150} height={150}/>
+											<Image
+												className="circleImage pb-3"
+												src={data?.user_profile?.photo ? data.user_profile.photo : profil}
+												width={150}
+												height={150}
+											/>
 										</Col>
 									</Row>
 									<div className="h1SideBarProfile pb-1">{data?.name}</div>
@@ -70,7 +73,7 @@ export default function EmpProfile() {
 									<div className="pSideBarProfile pb-3">{data?.type}</div>
 									<div className="pSideBarProfile text pb-3">{data?.user_profile?.shortDesc}</div>
 
-									<Link to="/hire">
+									<Link to={`/hire/${id}`}>
 										<Button renderAS="button" className="Button doit mt-3 mb-4">
 											Hire
 										</Button>
@@ -84,10 +87,11 @@ export default function EmpProfile() {
 
 									<div className="h1SideBarProfile mb-2">Skill</div>
 									<div className="mb-4 d-flex flex-wrap">
-										{skills.map((item) =>(
-											<div key={item.id} className="theTag">{item.name}</div>
+										{skills.map((item) => (
+											<div key={item.id} className="theTag">
+												{item.name}
+											</div>
 										))}
-										
 									</div>
 
 									<div className="pSideBarProfile">
@@ -123,7 +127,6 @@ export default function EmpProfile() {
 												<a href="#3">{data?.user_profile?.linkedin}</a>
 											</Col>
 										</Row>
-						
 									</div>
 								</div>
 							</Row>
@@ -142,11 +145,11 @@ export default function EmpProfile() {
 									<Tab eventKey="tab1" title="Portofolio">
 										<div className="portoPage">
 											<Row>
-												{dataFolio?.map((item) =>(
+												{dataFolio?.map((item) => (
 													<Col key={item.id} sm={4} className="mb-4 theTitle">
-													<Image src={item?.photo ? item.photo :p1} />
-													<div className="portoTitle">{item?.name}</div>
-												</Col>
+														<Image src={item?.photo ? item.photo : p1} />
+														<div className="portoTitle">{item?.name}</div>
+													</Col>
 												))}
 											</Row>
 										</div>
@@ -155,21 +158,19 @@ export default function EmpProfile() {
 									{/* TAB JOB EXPERIENCES */}
 									<Tab eventKey="tab2" title="Job Experiences">
 										<div className="jobsExpPage">
-											{dataExp.map((item) =>(
+											{dataExp.map((item) => (
 												<Row key={item.id} className="mb-4">
-												<Col sm={2}>
-													<Image src={item?.photo? item.photo : compImage} />
-												</Col>
-												<Col sm={10}>
-													<div className="theTitle">{item?.work_experience.position}</div>
-													<div className="theComp">{item?.name}</div>
-													<div className="theDate mb-3">{item?.work_experience.startDate}</div>
-													<div className="theDesc mb-1">{item?.work_experience.shortDesc}</div>
-												</Col>
-											</Row>
+													<Col sm={2}>
+														<Image src={item?.photo ? item.photo : compImage} />
+													</Col>
+													<Col sm={10}>
+														<div className="theTitle">{item?.work_experience.position}</div>
+														<div className="theComp">{item?.name}</div>
+														<div className="theDate mb-3">{item?.work_experience.startDate}</div>
+														<div className="theDesc mb-1">{item?.work_experience.shortDesc}</div>
+													</Col>
+												</Row>
 											))}
-											
-									
 										</div>
 									</Tab>
 								</Tabs>

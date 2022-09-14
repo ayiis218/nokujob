@@ -16,6 +16,7 @@ import Footer from "../components/organisms/Footer";
 export default function CompEdit() {
 	const Navigate = useNavigate();
 	const token = Cookies.get("token");
+	const id = Cookies.get("users");
 	const [data, setData] = useState([]);
 	const [loading, setLoading] = useState(false);
 	// console.log(data);
@@ -64,8 +65,8 @@ export default function CompEdit() {
 								<div className="whiteBg pt-4 pb-4 px-4">
 									<Row>
 										<Col />
-										<Col xs={6}>
-											<Image className="circleImage pb-3" src={data.photo} />
+										<Col xs={8}>
+											<Image className="circleImage pb-3" src={data.photo} width={130} height={140} />
 											<Row className="pb-4">
 												<Link to="/#editAvatarCompanyURL" className="logoEdit inlineIconText">
 													<Image src={edit} />
@@ -87,10 +88,10 @@ export default function CompEdit() {
 								{/* BUTTON FOR SAVE & CANCEL OF EDITING */}
 								<div className="profilSaveCancel">
 									<Row>
-										<Link to="/company">
+										<Link to={`/company/${id}`}>
 											<Button className="Button doit mt-3 mb-2">Save</Button>
 										</Link>
-										<Link to="/company">
+										<Link to={`/company/${id}`}>
 											<Button className="Button cancel mb-2">Cancel</Button>
 										</Link>
 									</Row>
