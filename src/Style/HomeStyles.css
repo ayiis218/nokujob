@@ -28,6 +28,17 @@
 	background-color: #5e50a1;
 }
 
+.bg-paginate{
+	background-color: #5e50a1 !important;
+	color: aliceblue;
+}
+.bg-paginate:focus{
+	background-color: #5e50a1 !important;
+	color: aliceblue;
+}
+.clr-paginate{
+	color: #5e50a1;
+}
 .App {
 	background-color: #f6f7f8;
 }

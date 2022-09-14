@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
-import logo from "../../assets/img/logopng.png";
+import logo from "../../assets/img/logosk.png";
 import { Link } from "react-router-dom";
 
 function Navbar2() {
@@ -8,7 +8,7 @@ function Navbar2() {
 		<Navbar bg="white" expand="lg">
 			<Container>
 				{/* <Col lg={9} className="mx-auto"> */}
-				<img className="navbar-brand " src={logo} alt="" width={100} height={45} />
+				<img className="navbar-brand lgo-img" src={logo} alt="" width={100} height={45} />
 				<Navbar.Collapse id="navbarScroll">
 					<Nav className="me-auto " style={{ maxHeight: "0px" }} navbarScroll />
 

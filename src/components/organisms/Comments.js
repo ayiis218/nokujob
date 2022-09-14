@@ -16,7 +16,7 @@ function Comments() {
 							<Card.Body>
 								<Card.Title className="mt-3 text-center">Ilham Yusuf Alghani</Card.Title>
 								<Card.Subtitle className="mb-2 text-muted text-center">Yogyakarta</Card.Subtitle>
-								<Card.Text><blockquote>&quot;SokuJobs memudahkan perusahaan kami untuk merekrut karyawan&ldquo;,</blockquote>
+								<Card.Text>&quot;SokuJobs memudahkan perusahaan kami untuk merekrut karyawan&ldquo;
 								</Card.Text>
 								<p className="fw-bold">-Recipenation-</p>
 							</Card.Body>
@@ -28,7 +28,7 @@ function Comments() {
 							<Card.Body>
 								<Card.Title className="mt-3 text-center">Michael Kevin L</Card.Title>
 								<Card.Subtitle className="mb-2 text-muted text-center">Cimahi</Card.Subtitle>
-								<Card.Text><blockquote>&quot;Bukan sekedar membantu mencari kandidat untuk perusahaan tapi pelayanan yang diberikan melebihi expetasi kami&ldquo;,</blockquote>
+								<Card.Text>&quot;Bukan sekedar membantu mencari kandidat untuk perusahaan tapi pelayanan yang diberikan melebihi expetasi kami&ldquo;
 								</Card.Text>
 								<p className="fw-bold">-Lets Cooking App-</p>
 							</Card.Body>
@@ -40,7 +40,7 @@ function Comments() {
 							<Card.Body>
 								<Card.Title className="mt-3 text-center">Alfredo Bangun</Card.Title>
 								<Card.Subtitle className="mb-2 text-muted text-center">Kupang</Card.Subtitle>
-								<Card.Text><blockquote>&quot; Dengan sokujobs kami menghemat banyak biaya dan waktu untuk merekrut kandidat pekerja &ldquo;,</blockquote> 
+								<Card.Text>&quot;Dengan sokujobs kami menghemat banyak biaya dan waktu untuk merekrut kandidat pekerja&ldquo;
 								</Card.Text>
 								<p className="fw-bold">Next Food Paradise-</p>
 							</Card.Body>

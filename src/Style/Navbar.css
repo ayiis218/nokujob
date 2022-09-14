@@ -15,8 +15,8 @@
     border: none;
 }
 .lgo-img{
-    width: 156px;
+    width: 156px !important;
     padding: 0px;
-    height: 105px;
+    height: 105px !important;
     object-fit: cover;
 }
