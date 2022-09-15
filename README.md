@@ -87,7 +87,7 @@
           <li>Run project</li>
             <pre><code>npm run start</code></pre>
         </ul>
-        ## Screenshoots
+          <h3 id=getting>Screenshoots</h3>
 
 <p align="center" display=flex>
 <table>
