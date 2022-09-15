@@ -87,8 +87,53 @@
           <li>Run project</li>
             <pre><code>npm run start</code></pre>
         </ul>
+        ## Screenshoots
+
+<p align="center" display=flex>
+<table>
+
+<tr>
+<td><h4 style="margin-buttom:8px">Login</h4></td>
+<td><h4 style="margin-buttom:8px">Register</h4></td>
+</tr>
+<tr>
+<td><image src="https://i.postimg.cc/D0VmWsX4/loginpw.png" alt="" ></td>
+<td><image src="https://i.postimg.cc/XvmYhFx1/recruiter.png" alt=""/></td>
+</tr>
+<tr>
+<td><h4 style="margin-buttom:8px">Home</h4></td>
+<td><h4 style="margin-buttom:8px">Search</h4></td>
+</tr>
+<tr>
+<td><image src="https://i.postimg.cc/pTSXwjZ1/home.png" alt="" width=650></td>
+<td><image src="https://i.postimg.cc/3wdwn9jD/search_by_skill.png" alt="" width=500/></td>
+</tr>
+<tr>
+<td><h4 style="margin-buttom:8px">Profile Recruiter</h4></td>
+<td><h4 style="margin-buttom:8px">Edit Profile Recruiter</h4></td>
+</tr>
+<tr>
+<td><image src="https://i.postimg.cc/YC7gDcjL/profilecom.png" alt="" width=650/></td>
+<td><image src="https://i.postimg.cc/SQtM42R4/company-edit.png" alt="" width=650/></td>
+</tr>
+<tr>
+<td><h4 style="margin-buttom:8px">Profile Jobseeker</h4></td>
+<td><h4 style="margin-buttom:8px">Edit Profile Jobseeker</h4></td>
+</tr>
+<tr>
+<td><image src="https://i.postimg.cc/3xrND3d1/profileem.png" alt="" width=650/></td>
+<td><image src="https://i.postimg.cc/rsvsr4Rt/editprofe.png" alt="" width=650/></td>
+</tr>
+<tr>
+<td colspan="2"><h4 style="margin-buttom:8px">Landing</h4></td>
+</tr>
+<tr>
+<td><image src="https://i.postimg.cc/fyKZw0jN/lnding.png" alt="" width=650/></td>
+</tr>
+</table>
         
-<h3 name="Screenshot">Screenshot</h3>
+        
+<!--- <h3 name="Screenshot">Screenshot</h3>
           <img src="https://user-images.githubusercontent.com/45787278/189544337-f189c4dd-7ccd-4227-9e44-e662389c42c5.png" alt="lasagna" align="center">
           <img src="https://user-images.githubusercontent.com/45787278/189544343-52510fe2-252b-4a4b-ba33-63870c65bb66.png" alt="lasagna" align="center">
           <img src="https://user-images.githubusercontent.com/45787278/189544350-8e57abdf-781e-4847-9775-a66c6285196a.png" alt="lasagna" align="center">
@@ -97,7 +142,8 @@
           <img src="https://user-images.githubusercontent.com/45787278/189544382-00e34e4e-9b0b-4235-a12b-d0f33f415a17.png" alt="lasagna" align="center">
           <img src="https://user-images.githubusercontent.com/45787278/189544387-86b96720-cd7f-45bd-ac40-734653ffbaac.png" alt="lasagna" align="center">
           <img src="https://user-images.githubusercontent.com/45787278/189544399-e8fc7188-562c-4f08-a43f-67094b5ebc40.png" alt="lasagna" align="center">
-<h3 name="Contributing">Contributing</h3>
+<h3 name="Contributing">Contributing</h3> --->
+
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
 <p>If you have difficulty contributing, please contact us</p>
