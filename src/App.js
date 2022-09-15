@@ -42,9 +42,9 @@ function App() {
 								<Route path="chat" element={<Chat />} />
 								<Route path="employed/:id" element={<EmployeeProfile />} />
 								<Route path="employed/edit" element={<EmployeeEdit />} />
-								<Route path="company" element={<CompanyProfile />} />
+								<Route path="company/:id" element={<CompanyProfile />} />
 								<Route path="company/edit" element={<CompanyEdit />} />
-								<Route path="hire" element={<HiringEmployee />} />
+								<Route path="hire/:id" element={<HiringEmployee />} />
 								<Route path="home" element={<Home />} />
 								<Route path="landing" element={<LandingPage />} />
 							</Route>
