@@ -117,17 +117,18 @@
 <td><image src="https://i.postimg.cc/SQtM42R4/company-edit.png" alt="" width=650/></td>
 </tr>
 <tr>
-<td><h4 style="margin-buttom:8px">Profile Jobseeker</h4></td>
-<td><h4 style="margin-buttom:8px">Edit Profile Jobseeker</h4></td>
+<td colspan="2"><h4 style="margin-buttom:8px">Profile Jobseeker</h4></td>
 </tr>
 <tr>
 <td><image src="https://i.postimg.cc/3xrND3d1/profileem.png" alt="" width=650/></td>
-<td><image src="https://i.postimg.cc/rsvsr4Rt/editprofe.png" alt="" width=650/></td>
+<td><image src="https://i.postimg.cc/VvZCBbwW/nanang.png" alt="" width=650/></td>
 </tr>
 <tr>
-<td colspan="2"><h4 style="margin-buttom:8px">Landing</h4></td>
+<td><h4 style="margin-buttom:8px">edit Profile</h4></td>
+<td><h4 style="margin-buttom:8px">Landing</h4></td>
 </tr>
 <tr>
+ <td><image src="https://i.postimg.cc/rsvsr4Rt/editprofe.png" alt="" width=650/></td>
 <td><image src="https://i.postimg.cc/fyKZw0jN/lnding.png" alt="" width=650/></td>
 </tr>
 </table>
