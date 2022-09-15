@@ -150,11 +150,10 @@ If you have a suggestion that would make this better, please fork the repo and c
 <p>If you have difficulty contributing, please contact us</p>
   
 <h3 name="Related">Related Project</h3>
- <a href="">🚀 Backend ankasa ticketing </a><br/>
- <a href="">🚀 Client ankasa ticketing </a><br/>
-  <a href="">🚀 Dashboard admin </a><br/>
- <a href="">🚀 Domain server ankasa ticketing </a><br/>
- <a href="">🚀 Demo ankasa ticketing</a><br/>
+ <a href="https://github.com/nanangNSL/sokujobs-server">🚀 Backend Soku Job </a><br/> 
+ <a href="https://github.com/ayiis218/nokujob">🚀 Frontend Soku Job </a><br/>
+ <a href="https://sokujobs-server-production.up.railway.app/">🚀 Domain server Soku Job</a><br/>
+ <a href="https://nokujob.web.app/">🚀 Demo Soku Job</a><br/>
 <h3 name="">Our Team</h3>
 <br/>
 <table>
