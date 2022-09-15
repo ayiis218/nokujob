@@ -6,15 +6,30 @@ import logo from "../../assets/img/logosk.png";
 import profil from "../../assets/img/profil.jpg";
 import { Bell, Envelope } from "react-bootstrap-icons";
 import "../../Style/Navbar.css";
+import axios from "axios";
 
 function Navbar1() {
 	const users = Cookies.get("type");
 	const id = Cookies.get("users");
+	const token = Cookies.get("token");
 	const [data, setData] = useState("");
+	const [notification, setNotification] = useState(null);
+
+	const getNotif = () => {
+		axios
+			.get(`${process.env.REACT_APP_BACKEND_URL}/notification`, {
+				headers: { Authorization: `Bearer ${token}` },
+			})
+			.then((res) => {
+				setNotification(res.data.results);
+			});
+	};
 
 	useEffect(() => {
 		setData(users);
+		getNotif();
 	}, []);
+
 	return (
 		<Navbar bg="white" expand="lg">
 			<Container>
@@ -30,7 +45,11 @@ function Navbar1() {
 						overlay={
 							<Popover id="popover-positioned-bottom">
 								<Popover.Body>
-									<strong>You have new notification</strong>
+									{notification?.length > 0 ? (
+										notification.map((el) => <strong>{el.purpose}</strong>)
+									) : (
+										<strong>You dont have notification</strong>
+									)}
 								</Popover.Body>
 							</Popover>
 						}
