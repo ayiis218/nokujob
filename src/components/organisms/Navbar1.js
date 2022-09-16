@@ -6,7 +6,7 @@ import logo from "../../assets/img/logosk.png";
 import profil from "../../assets/img/profil.jpg";
 import { Bell, Envelope } from "react-bootstrap-icons";
 import "../../Style/Navbar.css";
-import axios from "axios";
+import axios from "../../helpers/axios";
 
 function Navbar1() {
 	const users = Cookies.get("type");
@@ -16,13 +16,9 @@ function Navbar1() {
 	const [notification, setNotification] = useState(null);
 
 	const getNotif = () => {
-		axios
-			.get(`${process.env.REACT_APP_BACKEND_URL}/notification`, {
-				headers: { Authorization: `Bearer ${token}` },
-			})
-			.then((res) => {
-				setNotification(res.data.results);
-			});
+		axios.get("notification", { headers: { Authorization: `Bearer ${token}` } }).then((res) => {
+			setNotification(res.data.results);
+		});
 	};
 
 	useEffect(() => {
