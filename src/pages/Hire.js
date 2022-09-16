@@ -72,7 +72,7 @@ export default function Hire() {
 		} else {
 			setLoading(true);
 			axios
-				.post("/notification", dataHire, { headers: { Authorization: `Bearer ${token}` } })
+				.post("notification", dataHire, { headers: { Authorization: `Bearer ${token}` } })
 				.then(() => {
 					alert.fire({
 						title: "Success!",

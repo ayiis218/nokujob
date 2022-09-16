@@ -9,8 +9,7 @@ import user from "../../assets/icons/user.png";
 
 function FormChat() {
 	const [message, setMessage] = useState("");
-	const empety = false;
-
+	const empety = true;
 	return (
 		<section className={styles.chat}>
 			<Container fluid>
@@ -52,7 +51,9 @@ function FormChat() {
 						<div className={styles.chat_right}>
 							<div className={styles.chat_header}>
 								{empety ? (
-									<div>not message</div>
+									<div className={styles.chat_title}>
+										<h5>not massage</h5>
+									</div>
 								) : (
 									<div>
 										<Row>
@@ -70,7 +71,7 @@ function FormChat() {
 							<hr />
 							{empety ? (
 								<div className="d-flex justify-content-center align-items-center h-75">
-									<h5 className={styles.chat_nochat}>Please select a chat to start messaging</h5>
+									<h5 className="fw-bold">Please select a chat to start messaging</h5>
 								</div>
 							) : (
 								<div className="overflow-auto" id="chats" style={{ height: "60vh" }}>
@@ -85,7 +86,7 @@ function FormChat() {
 								</div>
 							)}
 							<form action="">
-								<div className="d-flex align-items-center justify-content-center p-5" style={{ gap: "10px" }}>
+								<div className="d-flex align-items-center justify-content-center">
 									<InputEmoji value={message} onChange={setMessage} placeholder="type message..." />
 									<button type="submit" className={styles.button}>
 										<img src={send} alt="Send Message" />
