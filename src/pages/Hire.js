@@ -62,7 +62,7 @@ export default function Hire() {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		const dataHire = { purpose, fullName, email, phone, desc, fromUserId, toUserId };
+		const dataHire = { purpose, name: fullName, email, phoneNumber: phone, description: desc, fromUserId, toUserId };
 		if (!purpose || !fullName || !email || !phone || !desc) {
 			alert.fire({
 				title: "Error!",
