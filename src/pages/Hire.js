@@ -41,8 +41,8 @@ export default function Hire() {
 
 	useEffect(() => {
 		getUser();
-		setFromUserId(fromUser);
-		setToUserId(id);
+		setFromUserId(parseInt(fromUser, 10));
+		setToUserId(parseInt(id, 10));
 	}, []);
 
 	const getUser = () => {
